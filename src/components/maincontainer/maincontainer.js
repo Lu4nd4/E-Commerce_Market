@@ -18,7 +18,7 @@ const MainContainer = (props) =>{
         <div className="mainContainer row">
             <div className="col-6 textpart">
                 <h3>Refresh Your</h3>
-                <h1>TV EXPERIENCE</h1>
+                <h1>TV EXPERIENCEEEEEEEEEEEEEEEE</h1>
                 <div className="row ">
                     <img alt="hello3" src={sony} className="col-3 logopart1"/>
                     <img alt="hello3" src={senheizer} className="col-2 logopart2"/>
