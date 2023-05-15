@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react";
-import { ReactDOM } from "react";
 import "./stocks.css";
 import '../../App.css';
 import SamsungQled from "../../images/image 10.png";
@@ -25,16 +24,16 @@ const Stocks = ({title, setThecount}) => {
     const [reviews, setReviews] = useState(10)
 
     const addToChart = () =>{
-        if(element1=="none")
+        if(element1 === "none")
         setElement1("block")
         else setElement1("none")
     }
 
     const likeOnClickHandler =()=>{
         
-        if(element =="none" && theheart == heart){
+        if(element === "none" && theheart === heart){
             setheart(redHeart)
-        }else if(element =="none" && theheart == redHeart  && star1 !== noFillstar){
+        }else if(element === "none" && theheart === redHeart  && star1 !== noFillstar){
             setheart(heart)
             setstar1(noFillstar); 
             setstar2(noFillstar);
@@ -43,28 +42,28 @@ const Stocks = ({title, setThecount}) => {
             setstar5(noFillstar)
             setReviews(prev =>{ return prev-1})
             setStarss(4.5)
-        }else if(element =="block" && theheart == redHeart){
+        }else if(element === "block" && theheart === redHeart){
             setElement("none")
         }
 
         
     }
     const reviewsOnClickHandler= () =>{
-        if(element =="none" && theheart == redHeart){
+        if(element === "none" && theheart === redHeart){
             setElement("block")
         }
-        else if(element =="none" && theheart == redHeart){
+        else if(element === "none" && theheart === redHeart){
             setElement("none")
         }
     }
 
 
     const handleEnter1 = () =>{
-        if(star1 == noFillstar){
+        if(star1 === noFillstar){
             setstar1(star)
             setReviews(prev =>{ return prev+1})
             setStarss(prev => {return (prev + (1/reviews)).toFixed(1)})
-        }else if(star1 == star && star2==star){
+        }else if(star1 === star && star2 === star){
             setstar2(noFillstar);
             setstar3(noFillstar)
             setstar4(noFillstar)
@@ -77,12 +76,12 @@ const Stocks = ({title, setThecount}) => {
         
     };
     const handleEnter2 = () =>{
-        if(star2 == noFillstar){
+        if(star2 === noFillstar){
             setstar1(star); 
             setstar2(star)
             setReviews(prev =>{ return prev+1})
             setStarss(prev => {return (prev + (2/reviews)).toFixed(1)})
-        }else if(star2 == star && star3==star){
+        }else if(star2 === star && star3 === star){
             setStarss((4.5 + (2/reviews)).toFixed(1))
             setstar3(noFillstar)
             setstar4(noFillstar)
@@ -90,36 +89,36 @@ const Stocks = ({title, setThecount}) => {
         }
     };
     const handleEnter3 = () =>{
-        if(star3 == noFillstar){
+        if(star3 === noFillstar){
             setstar1(star); 
             setstar2(star);
             setstar3(star)
             setReviews(prev =>{ return prev+1})
             setStarss(prev => {return (prev + (3/reviews)).toFixed(1)})
-        }else if(star3 == star && star4==star){
+        }else if(star3 === star && star4 === star){
             setStarss((4.5 + (3/reviews)).toFixed(1))
             setstar4(noFillstar)
             setstar5(noFillstar)
-        }else if(star3 == star){
+        }else if(star3 === star){
             setReviews(prev =>{ return prev+1})
             setStarss(prev => {return (prev + (3/reviews)).toFixed(1)})
             setstar4(noFillstar)
             setstar5(noFillstar)
         }};
     const handleEnter4 = () =>{
-        if(star4 == noFillstar){
+        if(star4 === noFillstar){
             setstar1(star)
             setstar2(star)
             setstar3(star)
             setstar4(star)
             setReviews(prev =>{ return prev+1})
             setStarss(prev => {return (prev + (4/reviews)).toFixed(1)})
-        }else if(star4 == star && star5==star){
+        }else if(star4 === star && star5 === star){
             setStarss((4.5 + (4/reviews)).toFixed(1))
             setstar5(noFillstar)
         }}
     const handleEnter5 = () =>{
-        if(star5 == noFillstar){
+        if(star5 === noFillstar){
             setstar1(star)
             setstar2(star)
             setstar3(star)
@@ -136,24 +135,24 @@ const Stocks = ({title, setThecount}) => {
 
         const countMinus = () =>{
             setCount(prev => {
-                if(prev == 0) return 0
+                if(prev === 0) return 0
                 else return prev = prev - 1})
         }
     useEffect(()=>{
         setThecount(counts)
-    }, [counts])
+    }, [counts, setThecount])
 
 
     return (
         <div className="stocks">
             <div>
-            <img src={SamsungQled} className="monitor"/>
+            <img alt="" src={SamsungQled} className="monitor"/>
             </div>
             <h3>{title}</h3>
             <div className="specs row">
                 <div className="info col-9">
                     <div className="reviews">
-                        <img src={star}/>
+                        <img alt="" src={star}/>
                         <span>{starss} <span> ({reviews}) Reviews</span></span>
                         
                     </div>
@@ -165,21 +164,21 @@ const Stocks = ({title, setThecount}) => {
                     <h2>€ 321.74</h2>
                 </div>
                 <div className="likes col-2">
-                    <img src={arrows}/>
+                    <img alt="" src={arrows}/>
                     <div className="popUp" style={{display: element}}>
-                        <img className="star1" src={star1} onClick={handleEnter1} />
-                        <img className="star2" src={star2} onClick={handleEnter2} />
-                        <img className="star3" src={star3} onClick={handleEnter3} />
-                        <img className="star4" src={star4} onClick={handleEnter4} />
-                        <img className="star5" src={star5} onClick={handleEnter5} />
+                        <img alt="" className="star1" src={star1} onClick={handleEnter1} />
+                        <img alt="" className="star2" src={star2} onClick={handleEnter2} />
+                        <img alt="" className="star3" src={star3} onClick={handleEnter3} />
+                        <img alt="" className="star4" src={star4} onClick={handleEnter4} />
+                        <img alt="" className="star5" src={star5} onClick={handleEnter5} />
                     </div>
-                    <img src={theheart} onClick={likeOnClickHandler} onDoubleClick={reviewsOnClickHandler}/>
+                    <img alt="" src={theheart} onClick={likeOnClickHandler} onDoubleClick={reviewsOnClickHandler}/>
                     <div className="popUp2" style={{display: element1}}>
                         <div className="minus" onClick={countMinus}>-</div>
                         <div className="count">{counts}</div>
                         <div className="plus" onClick={countPlus}>+</div>
                     </div>
-                    <img src={lock2} onClick={addToChart}/>
+                    <img alt="" src={lock2} onClick={addToChart}/>
                 </div>
 
             </div>

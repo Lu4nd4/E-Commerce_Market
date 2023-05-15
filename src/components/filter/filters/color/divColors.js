@@ -34,7 +34,7 @@ const DivColors = ({change, onDone}) => {
             }
         }) 
         setimage(()=>{
-            if(change.divColor =="White" || ( change.divColor=="Yellow")){
+            if(change.divColor === "White" || ( change.divColor === "Yellow")){
                 return checkkblack
             }else return checkkwhite
         })
@@ -42,7 +42,7 @@ const DivColors = ({change, onDone}) => {
     return (
         <div>
             <div onClick={imageHandler} className={change.class} style={{backgroundColor: change.divColor, borderColor: change.border}}>
-                <img src={image} style={{display: show }}/>
+                <img alt="img2" src={image} style={{display: show }}/>
             </div>
         </div>
     )

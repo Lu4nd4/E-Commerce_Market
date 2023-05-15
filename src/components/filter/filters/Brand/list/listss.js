@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useContext } from "react";
 import {IfClicked} from '../../../filter'
 
-const Listss = ({text, filterAll, setAll}) => {
+const Listss = (props) => {
     const starts = useContext(IfClicked)
     const [ifchecked, setIfchecked] = useState(false)
+
     useEffect(()=>{
-        if(text=="All"){
+        if(props.text ==="All"){
             setIfchecked(true)
 
         }else{
             setIfchecked(false)
         }
-    }, [starts])
+    }, [starts, props.text])
     
     const onChangeHandler = () =>{
         // if(text=="All" && ifchecked == true){
@@ -30,7 +31,7 @@ const Listss = ({text, filterAll, setAll}) => {
     
     return (
         <div>
-        <label className="label"> <input className="list" onChange={onChangeHandler} type="checkbox" id="checkbox" onClick={onClickHandler} checked={ifchecked}/>{text}</label>
+        <label className="label"> <input className="list" onChange={onChangeHandler} type="checkbox" id="checkbox" onClick={onClickHandler} checked={ifchecked}/>{props.text}</label>
         </div>
     )
 }

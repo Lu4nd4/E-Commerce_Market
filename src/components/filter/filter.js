@@ -1,5 +1,5 @@
-import { click } from "@testing-library/user-event/dist/click";
-import React, { useState, useEffect } from "react";
+
+import React, { useState } from "react";
 import "./filter.css";
 import Brand from "./filters/Brand/brand";
 import Color from "./filters/color/color";

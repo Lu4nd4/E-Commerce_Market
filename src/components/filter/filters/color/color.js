@@ -8,7 +8,7 @@ import {IfClicked} from '../../filter'
 
 const Color = ({block, theColor , onClick }) => {
     const starts = useContext(IfClicked)
-    const [changeColor, setchangeColor] = useState([
+    const [changeColor] = useState([
         {id: 1, divColor: "Black", border: "black", selected: false, class: "black myColor"},
         {id: 2, divColor: "Red" , border: "red", selected: false, class: "red myColor"} ,
         {id: 3, divColor: "Blue" , border: "blue", selected: false, class: "blue myColor"},
@@ -33,7 +33,7 @@ const Color = ({block, theColor , onClick }) => {
         setChecked((prevstate)=> [ ...prevstate.filter(element => {
             return element.id !== id 
         }) ,
-         ...changeColor.filter(color =>{ return color.id ==id && color.selected == select})]    
+         ...changeColor.filter(color =>{ return color.id === id && color.selected === select})]    
      )}
      
     useEffect(()=>{
@@ -49,7 +49,7 @@ const Color = ({block, theColor , onClick }) => {
 
     return (
         <div>
-            <p className={theColor} onClick={onClick}>Color <span><img src={smallarrow} width= "10px" height= "5px "/></span></p>
+            <p className={theColor} onClick={onClick}>Color <span><img src={smallarrow} alt="img" width= "10px" height= "5px "/></span></p>
             
             <div style={{display: block, paddingBottom: mymargin}}>
             {changeColor.map(color=> <DivColors key={color.id} change={color} onDone = {handleTask}/>) }

@@ -1,10 +1,9 @@
 import './nav.css'
-import React, { useState, useEffect, useLayoutEffect, useRef  } from 'react';
+import React, { useState, useEffect} from 'react';
 import lock from "../../images/Group.png";
 import profile from "../../images/Group 29.png";
 import arrow from "../../images/Vector 19.png";
 import cart from "../../images/Ellipse 24.png";
-import { gsap } from "gsap";
 import Login from './loginPage/login';
 
 const Nav = ({thecount}) => {
@@ -29,14 +28,14 @@ const Nav = ({thecount}) => {
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const showElement = () =>{
-        if(show == "none") setShow("block")
+        if(show === "none") setShow("block")
         else setShow("none")
     }
     const loginForm = () =>{
         
         
-        if(loginform == "none"){
-            if(handleAcc=="Log In"){
+        if(loginform === "none"){
+            if(handleAcc ==="Log In"){
                 setHandleAccount("Log Out")
                 setLoginform("none")
                 setLogin("none")
@@ -56,7 +55,7 @@ const Nav = ({thecount}) => {
         }
     }
     const loginHandler = () =>{
-        if(login == "none"){
+        if(login === "none"){
           setLogin("block")  
         } 
         else setLogin("none")

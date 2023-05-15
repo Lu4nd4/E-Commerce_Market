@@ -16,13 +16,13 @@ const Footer = () =>{
                 <h3>MORE THAN 100 BRANDS</h3>
             </div>
             <div className="col-9 row footerlogos">
-                <div className="footerarrow"><img src={left}/></div>
-                <img className="ps4" src={ps4}/>
-                <img className="lg" src={LG}/>
-                <img className="samsung" src={samsung}/>
-                <img className="germin" src={garmin}/>
-                <img className="tefal"  src={tefal}/>
-                <div className="footerarrow"><img src={right} /></div>
+                <div className="footerarrow"><img alt="" src={left}/></div>
+                <img alt="hello2" className="ps4" src={ps4}/>
+                <img alt="hello2" className="lg" src={LG}/>
+                <img alt="hello2" className="samsung" src={samsung}/>
+                <img alt="hello2" className="germin" src={garmin}/>
+                <img alt="hello2" className="tefal"  src={tefal}/>
+                <div className="footerarrow"><img alt="" src={right} /></div>
             </div>
         </div>
     )

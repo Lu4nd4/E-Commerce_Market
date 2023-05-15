@@ -33,7 +33,7 @@ const Price = ({block, onClick}) => {
     }
 
     useEffect(()=>{
-        let percentage = img3 / 220;
+        let percentage = img2 / 220;
         setEnd((percentage * 2000).toFixed())
         
     },[img2])
@@ -41,7 +41,7 @@ const Price = ({block, onClick}) => {
 
     return (
         <div>
-            <p className="price" onClick={onClick}>Price <span><img src={smallarrow} width= "10px" height= "5px "/></span></p>
+            <p className="price" onClick={onClick}>Price <span><img alt="img4" src={smallarrow} width= "10px" height= "5px "/></span></p>
 
 
             <div className="dropdown1" style={{display: block}}>
@@ -49,9 +49,9 @@ const Price = ({block, onClick}) => {
                 <p>$10 - ${end}</p>
 
                 <div className="pricerange row">
-                    <img src={circle1} width= "20px" height= "20px" className="imgrange1"/>
-                    <img src={rectangle} style= {{width: `${img2}px`}} height= "4px" className="imgrange2"/>
-                    <img src={circle2} draggable onDrag={handleDrag} style= {{marginLeft: `${img3}px`}} width= "20px" height= "20px" className="imgrange3"/>
+                    <img alt="Hello"  src={circle1} width= "20px" height= "20px" className="imgrange1"/>
+                    <img alt="Hello"  src={rectangle} style= {{width: `${img2}px`}} height= "4px" className="imgrange2"/>
+                    <img  alt="Hello" src={circle2} draggable onDrag={handleDrag} style= {{marginLeft: `${img3}px`}} width= "20px" height= "20px" className="imgrange3"/>
                 </div>
             </div>
         </div>

@@ -19,8 +19,8 @@ const App = () => {
   useEffect(()=>{
     setThecount(prev =>{
       return prev = thecount1+thecount2+thecount3+thecount4+thecount5+thecount6;
-    }, [thecount1,thecount2,thecount3,thecount4,thecount5,thecount6])
-  })
+    })
+  },[thecount1,thecount2,thecount3,thecount4,thecount5,thecount6])
 
   const navbar = <Nav thecount={thecount}/>
   return (

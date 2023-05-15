@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import './../filterss.css'
 import smallarrow from "../../../../images/Group (3).png"
 import Listss from "./list/listss";

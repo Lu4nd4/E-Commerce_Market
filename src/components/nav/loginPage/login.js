@@ -19,7 +19,7 @@ const Login = ({submits, name, surname, setA, setB, setbutton}) => {
       <form
         className="emailform"
       >
-        <img src={ex} onClick={close}/>
+        <img src={ex} alt="hello" onClick={close}/>
         <h2>Log In</h2>
         <input
           type="text"
