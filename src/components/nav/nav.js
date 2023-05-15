@@ -70,7 +70,7 @@ const Nav = ({thecount}) => {
             <div style={{display: loginform}} className="form">
                 <Login submits={setLoginform} name={setName} surname={setSurname} setB={setSetAccount} setA={setSetAccount1} setbutton={setHandleAccount}/>
             </div>
-            <h1 className='col-2'>Logo Here</h1>
+            <h1 className='col-2'>NanoTx</h1>
             <div className='col-6'>
                 <input className='search'  placeholder='Search Here...' />
             </div>
