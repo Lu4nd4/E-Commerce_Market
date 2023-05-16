@@ -70,7 +70,7 @@ const Nav = ({thecount}) => {
             <div style={{display: loginform}} className="form">
                 <Login submits={setLoginform} name={setName} surname={setSurname} setB={setSetAccount} setA={setSetAccount1} setbutton={setHandleAccount}/>
             </div>
-            <h1 className='col-2'>NanoTx</h1>
+            <h1 className='col-2'>NanoTxXX3334535</h1>
             <div className='col-6'>
                 <input className='search'  placeholder='Search Here...' />
             </div>
@@ -89,6 +89,7 @@ const Nav = ({thecount}) => {
                 <p className='cartp' style={{display: Showcart}}>{thecount}</p></div>
                 <img src={profile} alt='profile' onClick={loginHandler}/>
                 <div style={{display: login}} className="login">
+
                     <h5 style={{display: account1}}>Not logged in</h5>
                     <h5 style={{display: account}}>{name} {surname}</h5>
                     <button onClick={loginForm}>{handleAcc}</button>
