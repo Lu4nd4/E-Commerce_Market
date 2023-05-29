@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import './description.css';
 import product from "../../../images/iphone12purple.png";
@@ -47,6 +48,7 @@ const Description = () => {
                 
 
             </div>
+
 
         </div>
     )

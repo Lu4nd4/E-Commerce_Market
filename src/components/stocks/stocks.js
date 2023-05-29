@@ -8,9 +8,15 @@ import heart from "../../images/heart 1.png";
 import star from "../../images/star.png";
 import redHeart from "../../images/reheart.png";
 import noFillstar from "../../images/emptystar.png";
+import { variables } from "../../Variables";
 
 
-const Stocks = ({title, setThecount}) => {
+const Stocks = ({title, setThecount,onClickFunction, toCloseDesc}) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
+
+    
+    
+    
+    
     const [theheart, setheart] = useState(heart)
     const [star1, setstar1] = useState(noFillstar)
     const [star2, setstar2] = useState(noFillstar)
@@ -22,6 +28,7 @@ const Stocks = ({title, setThecount}) => {
     const [element1, setElement1] = useState('none')
     const [starss, setStarss] = useState(4.5)
     const [reviews, setReviews] = useState(10)
+    const [hideStock, setHideStock] = useState("block")//SHTOJA QITO
 
     const addToChart = () =>{
         if(element1 === "none")
@@ -30,6 +37,7 @@ const Stocks = ({title, setThecount}) => {
     }
 
     const likeOnClickHandler =()=>{
+
         
         if(element === "none" && theheart === heart){
             setheart(redHeart)
@@ -136,15 +144,30 @@ const Stocks = ({title, setThecount}) => {
         const countMinus = () =>{
             setCount(prev => {
                 if(prev === 0) return 0
-                else return prev = prev - 1})
+                else return prev = prev - 1})                               
         }
     useEffect(()=>{
         setThecount(counts)
     }, [counts, setThecount])
 
+    const showMydescription=()=>{ //SHTOJA QITO
+        setHideStock("none")
+        onClickFunction("showDescription") 
+    }
+
+    useEffect(()=>{ //SHTOJA QITO part 2
+        if(toCloseDesc == "true"){
+            setHideStock("block")
+            onClickFunction("hideDescription") 
+        }
+    },[toCloseDesc])
+
+
+
 
     return (
-        <div className="stocks">
+
+        <div className="stocks" onClick={showMydescription} style={{display: hideStock}}> {/*SHTOJA QITO */}
             <div className="stokmonitor">
             <img alt="" src={SamsungQled} className="monitor"/>
             </div>
@@ -180,7 +203,6 @@ const Stocks = ({title, setThecount}) => {
                     </div>
                     <img alt="" src={lock2} onClick={addToChart}/>
                 </div>
-
             </div>
         </div>
     )

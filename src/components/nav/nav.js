@@ -97,6 +97,7 @@ const Nav = ({thecount}) => {
                 <p className='cartp' style={{display: Showcart}}>{thecount}</p></div>
                 <img src={profile} alt='profile' onClick={loginHandler}/>
                 <div style={{display: login}} className="login">
+
                     <h5 style={{display: account1}}>Not logged in</h5>
                     <h5 style={{display: account}}>{name} {surname}</h5>
                     <button onClick={loginForm}>{handleAcc}</button>

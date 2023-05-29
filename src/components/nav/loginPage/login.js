@@ -48,7 +48,6 @@ const Login = ({submits, name, surname, setA, setB, setbutton}) => {
           id="email"
           placeholder="  Your Email"
           required
-          
         />
         
         <div className="text-center">
