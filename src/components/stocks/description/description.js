@@ -1,8 +1,8 @@
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './description.css';
 import product from "../../../images/iphone12purple.png";
 import heart from "../../../images/heart.png";
+import imgX from "../../../images/close.png" /*//SHTOJA QITO part 2 */
 import stock from "../../../images/checked.png";
 
 const Description = () => {
@@ -19,7 +19,9 @@ const Description = () => {
     
 
     return(
-        <div className="desc">
+        <div className="desc" className={props.classNames}>
+          <img src={imgX} alt='' onClick={()=>props.hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
+            <h2>{props.description}</h2>
             <img className="col-5" src={product} alt="product"></img>
             <div className="col-4 description">
                 <h2>SAMSUNG QLED QE55Q90R BRR12M001WWEG</h2>
