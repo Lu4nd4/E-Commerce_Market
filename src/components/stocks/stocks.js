@@ -3,7 +3,7 @@ import "./stocks.css";
 import '../../App.css';
 import SamsungQled from "../../images/image 10.png";
 import lock2 from "../../images/lock2.png";
-import arrows from "../../images/arrows.png";
+// import arrows from "../../images/arrows.png";
 import heart from "../../images/heart 1.png";
 import star from "../../images/star.png";
 import redHeart from "../../images/reheart.png";
@@ -145,7 +145,7 @@ const Stocks = ({title, setThecount}) => {
 
     return (
         <div className="stocks">
-            <div>
+            <div className="stokmonitor">
             <img alt="" src={SamsungQled} className="monitor"/>
             </div>
             <h3>{title}</h3>
@@ -157,14 +157,14 @@ const Stocks = ({title, setThecount}) => {
                         
                     </div>
                     <ul className="ul">
-                        <li>M.2 80mm</li>
-                        <li>3d v-nand (TLC)</li>
-                        <li>PCI-e 3.0 x4</li>
+                        <li>description</li>
+                        <li>description</li>
+                        <li>description</li>
                     </ul>
-                    <h2>€ 321.74</h2>
+                    <h2>300.00 MKD</h2>
                 </div>
                 <div className="likes col-2">
-                    <img alt="" src={arrows}/>
+                    {/* <img alt="" src={arrows}/> */}
                     <div className="popUp" style={{display: element}}>
                         <img alt="" className="star1" src={star1} onClick={handleEnter1} />
                         <img alt="" className="star2" src={star2} onClick={handleEnter2} />
@@ -172,7 +172,7 @@ const Stocks = ({title, setThecount}) => {
                         <img alt="" className="star4" src={star4} onClick={handleEnter4} />
                         <img alt="" className="star5" src={star5} onClick={handleEnter5} />
                     </div>
-                    <img alt="" src={theheart} onClick={likeOnClickHandler} onDoubleClick={reviewsOnClickHandler}/>
+                    <img className="heart" alt="" src={theheart} onClick={likeOnClickHandler} onDoubleClick={reviewsOnClickHandler}/>
                     <div className="popUp2" style={{display: element1}}>
                         <div className="minus" onClick={countMinus}>-</div>
                         <div className="count">{counts}</div>

@@ -1,7 +1,7 @@
 .filter{
     width: 70%;
     background: #0092ca; 
-    color: #eeeeee;
+    color: white;
     margin-top: 80px;
     margin-left: 30px;
     padding-left: 25px; 
@@ -11,12 +11,11 @@
   }
   .filter h3{
     margin: 14px 0 12px 0;
-
   }
   .filter button{
     background: #0092ca; 
     border: 0.5px solid white;
-    color: #eeeeee;
+    color: white;
     margin: 10px 0 10px 0;
     padding: 0 15px;
     border-radius: 5px;
@@ -27,7 +26,47 @@
   }
   .filters{
     margin-left: 31px;
-    width: 79%;
+    width: 77%;
     border: 1px solid lightgrey;
     border-radius: 0 0 15px 15px;
   }
+
+  .dropdown {
+    margin-left: 30px;
+
+  }
+
+  .dropdown img {
+    margin-left: 50px;
+    margin-bottom: 3px;
+  }
+
+  .dropdown div {
+    position: absolute;
+    border: none;
+    width: 400px;
+    height: 600px;
+    font-size: 15px;
+    background: #07192ce7;
+    text-align: center;
+    margin-left: 90px;
+    border: 1px solid #0e3a65ab;
+    border-radius: 2px 2px 5px 5px;
+    margin-top: 50px;
+    padding-top: 15px;
+  }
+
+  .dropdown div span {
+    border-bottom: 1px solid grey;
+    font-weight: 300;
+    margin: 0px 15px 0px 15px;
+    padding-bottom: 5px;
+    z-index: 5;
+  }
+
+  .dropdown div span:hover {
+    font-weight: 500;
+  }
+                 
+        
+                
