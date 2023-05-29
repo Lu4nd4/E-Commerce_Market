@@ -3,7 +3,7 @@ import "./stocks.css";
 import '../../App.css';
 import SamsungQled from "../../images/image 10.png";
 import lock2 from "../../images/lock2.png";
-import arrows from "../../images/arrows.png";
+// import arrows from "../../images/arrows.png";
 import heart from "../../images/heart 1.png";
 import star from "../../images/star.png";
 import redHeart from "../../images/reheart.png";
@@ -254,6 +254,7 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
               <div className="plus" onClick={countPlus}>
                 +
               </div>
+
             </div>
             <img alt="" className="theLock" src={lock2} onClick={addToChart} />
           </div>

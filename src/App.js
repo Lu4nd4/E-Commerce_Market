@@ -8,7 +8,6 @@ import Stocks from './components/stocks/stocks';
 import Description from './components/stocks/description/description';
 import { variables } from "./Variables";
 
- 
 
 const App = () => {
 
@@ -41,6 +40,8 @@ const App = () => {
   const [thecount4, setThecount4] = useState(0)
   const [thecount5, setThecount5] = useState(0)
   const [thecount6, setThecount6] = useState(0)
+  const [thecount7, setThecount7] = useState(0)
+  const [thecount8, setThecount8] = useState(0)
   const [visible, setVisible] = useState("hideDescription") //SHTOJA QITO
   const [visible2, setVisible2] = useState("false") //SHTOJA QITO part 2
 
@@ -66,6 +67,7 @@ const App = () => {
       <MainContainer navbar={navbar}></MainContainer>
       <div className="row products">
         <div className="col-3">
+
           <Filter />
         </div>
         <div className="row mystocks">
@@ -119,6 +121,7 @@ const App = () => {
       </div>
       <div>
         <Footer />
+        <Description/>
       </div>
     </div>
   );

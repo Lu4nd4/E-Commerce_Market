@@ -51,7 +51,7 @@ const Login = ({submits, name, surname, setA, setB, setbutton}) => {
         />
         
         <div className="text-center">
-          <button onClick={submit} >Send Message</button>
+          <button onClick={submit} >Submit</button>
         </div>
         <div className="signUp">
         <p>Dont have an acount? <span>Sign up</span></p>

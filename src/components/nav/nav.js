@@ -5,6 +5,7 @@ import profile from "../../images/Group 29.png";
 import arrow from "../../images/Vector 19.png";
 import cart from "../../images/Ellipse 24.png";
 import Login from './loginPage/login';
+import logo from '../../images/logonano.png';
 
 const Nav = ({thecount}) => {
 
@@ -70,9 +71,16 @@ const Nav = ({thecount}) => {
             <div style={{display: loginform}} className="form">
                 <Login submits={setLoginform} name={setName} surname={setSurname} setB={setSetAccount} setA={setSetAccount1} setbutton={setHandleAccount}/>
             </div>
-            <h1 className='col-2'>NanoTxXX3334535</h1>
-            <div className='col-6'>
-                <input className='search'  placeholder='Search Here...' />
+            {/* <h1 className='col-2 logon'>NanoTx</h1> */}
+            <img src={logo} className='col-2 logon'></img>
+            <div className='col-6 extranav'>
+                <input className='search'  placeholder='Search Here...' /> <br></br>
+                <div className='category'>
+                    <h3>Phones</h3>
+                    <h3>TVs</h3>
+                    <h3>Laptops</h3>
+                    <h3>Watches</h3>
+                </div>
             </div>
             <div className=' icons row'>
                 <div className='dropdown'>
