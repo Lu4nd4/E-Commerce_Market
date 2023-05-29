@@ -9,7 +9,6 @@ import Description from './components/stocks/description/description';
 import { variables } from "../../Variables";
 
 
-
 const App = () => {
 
       
@@ -32,6 +31,8 @@ const App = () => {
   const [thecount4, setThecount4] = useState(0)
   const [thecount5, setThecount5] = useState(0)
   const [thecount6, setThecount6] = useState(0)
+  const [thecount7, setThecount7] = useState(0)
+  const [thecount8, setThecount8] = useState(0)
   const [visible, setVisible] = useState("hideDescription") //SHTOJA QITO
   const [visible2, setVisible2] = useState("false") //SHTOJA QITO part 2
 
@@ -53,6 +54,7 @@ const App = () => {
   const navbar = <Nav thecount={thecount}/>
   return (
     <div className='app'>
+
       
       <MainContainer navbar= {navbar}></MainContainer>
       <div className='row products'>
@@ -63,15 +65,11 @@ const App = () => {
           <Stocks title="SAMSUNG QLED QE55Q90R" setThecount={setThecount1} toCloseDesc={visible2} onClickFunction={onClickDescription}/>{/*//SHTOJA QITO part 2 */}
           <Description classNames = {visible} hideDesc ={onClickDescription2}/> {/*SHTOJA QITO*/} {/*//SHTOJA QITO part 2 */}
 
-          {/* <Stocks title="Samsung Réfrigérateur BRR12M001WWEG" setThecount={setThecount2}/>
-          <Stocks title="Samsung Réfrigérateur BRR12M001WWEG" setThecount={setThecount3}/>
-          <Stocks title="Samsung Réfrigérateur BRR12M001WWEG" setThecount={setThecount4}/>
-          <Stocks title="Samsung Réfrigérateur BRR12M001WWEG" setThecount={setThecount5}/>
-          <Stocks title="Samsung Réfrigérateur BRR12M001WWEG" setThecount={setThecount6}/> */}
         </div>
       </div>
       <div>
         <Footer />
+        <Description/>
       </div>
     </div>
   );

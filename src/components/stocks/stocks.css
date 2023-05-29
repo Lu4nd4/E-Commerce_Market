@@ -2,8 +2,13 @@
     border: 1px solid lightgrey;
     border-radius: 20px;
     margin: 60px 10px 0 10px;
-    padding: 20px 5px 15px 20px;
-    width: 27.9%;
+    padding-top: 155px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    width: 20%;
+    height: 40%;
+    position: relative;
 }
 .stocks > h3{
     font-weight: 500;
@@ -14,6 +19,17 @@
 }
 .stocks .monitor{
     width: 100%;
+    display: none;
+}
+
+.stokmonitor{
+    position: absolute;
+}
+
+.stokmonitor:hover{
+    width: 120%;
+    margin-left: -8%;
+    margin-bottom: 2%;
 }
 .reviews img{
     margin-right: 10px;
@@ -40,7 +56,10 @@
 .likes img{
     width: 55%;
     margin-left: 35px;
-    margin-top: 10px;
+    padding-bottom: 30px;
+}
+.heart{
+    margin-top: 20px;
 }
 .popUp{
     height: 30px;
