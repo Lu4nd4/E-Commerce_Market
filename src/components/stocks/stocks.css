@@ -4,6 +4,7 @@
     margin: 60px 10px 0 10px;
     padding: 20px 5px 15px 20px;
     width: 27.9%;
+    position: relative;
 }
 .stocks > h3{
     font-weight: 500;
@@ -94,4 +95,26 @@
     width:40%;
     border-left: 1px solid black;
     border-right: 1px solid black;
+}
+.info{
+    padding-bottom: 30px;
+}
+.info h2:nth-child(3){
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+}
+.theLock{
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    width: 30px !important;
+    height: 38px;
+}
+.theHeart{
+    position: absolute;
+    bottom: 95px;
+    right: 30px;
+    width: 30px !important;
+    height: 30px;
 }

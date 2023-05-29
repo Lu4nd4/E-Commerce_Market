@@ -11,9 +11,11 @@ import noFillstar from "../../images/emptystar.png";
 import { variables } from "../../Variables";
 
 
-const Stocks = ({title, setThecount,onClickFunction, toCloseDesc}) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
+const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
+    //Backend
 
-    
+    const splitArray = props.description.split(',');
+    const firstThreeItems = splitArray.slice(0, 3);
     
     
     
@@ -147,64 +149,117 @@ const Stocks = ({title, setThecount,onClickFunction, toCloseDesc}) => { //SHTOJA
                 else return prev = prev - 1})                               
         }
     useEffect(()=>{
-        setThecount(counts)
-    }, [counts, setThecount])
+        props.setThecount(counts)
+    }, [counts, props.setThecount])
 
     const showMydescription=()=>{ //SHTOJA QITO
         setHideStock("none")
-        onClickFunction("showDescription") 
+        props.onClickFunction("showDescription") 
     }
 
     useEffect(()=>{ //SHTOJA QITO part 2
-        if(toCloseDesc == "true"){
+        if(props.toCloseDesc == "true"){
             setHideStock("block")
-            onClickFunction("hideDescription") 
+            props.onClickFunction("hideDescription") 
         }
-    },[toCloseDesc])
+    },[props.toCloseDesc])
 
 
 
 
     return (
-        <div className="stocks" onClick={showMydescription} style={{display: hideStock}}> {/*SHTOJA QITO */}
-            <div>
-            <img alt="" src={SamsungQled} className="monitor"/>
-            </div>
-            <h3>{title}</h3>
-            <div className="specs row">
-                <div className="info col-9">
-                    <div className="reviews">
-                        <img alt="" src={star}/>
-                        <span>{starss} <span> ({reviews}) Reviews</span></span>
-                        
-                    </div>
-                    <ul className="ul">
-                        <li>M.2 80mm</li>
-                        <li>3d v-nand (TLC)</li>
-                        <li>PCI-e 3.0 x4</li>
-                    </ul>
-                    <h2>€ 321.74</h2>
-                </div>
-                <div className="likes col-2">
-                    <img alt="" src={arrows}/>
-                    <div className="popUp" style={{display: element}}>
-                        <img alt="" className="star1" src={star1} onClick={handleEnter1} />
-                        <img alt="" className="star2" src={star2} onClick={handleEnter2} />
-                        <img alt="" className="star3" src={star3} onClick={handleEnter3} />
-                        <img alt="" className="star4" src={star4} onClick={handleEnter4} />
-                        <img alt="" className="star5" src={star5} onClick={handleEnter5} />
-                    </div>
-                    <img alt="" src={theheart} onClick={likeOnClickHandler} onDoubleClick={reviewsOnClickHandler}/>
-                    <div className="popUp2" style={{display: element1}}>
-                        <div className="minus" onClick={countMinus}>-</div>
-                        <div className="count">{counts}</div>
-                        <div className="plus" onClick={countPlus}>+</div>
-                    </div>
-                    <img alt="" src={lock2} onClick={addToChart}/>
-                </div>
-            </div>
+      <div
+        className="stocks"
+        onClick={showMydescription}
+        style={{ display: hideStock }}
+      >
+        {props.children}
+        {" "}
+        {/*SHTOJA QITO */}
+        <div>
+          <img alt="" src={SamsungQled} className="monitor" />
         </div>
-    )
+        <h3>{props.productName}</h3>
+        {/* productName={prod.ProductName}
+              description={prod.Description}
+              price={prod.Price}
+              stocks={prod.Stocks}
+              category={prod.CategoryID}
+              brand={prod.Brand}
+              setThecount={setThecount1}
+              toCloseDesc={visible2}
+              onClickFunction={onClickDescription}> 
+              <Description classNames = {visible} hideDesc ={onClickDescription2}/> */}
+        <div className="specs row">
+          <div className="info col-9">
+            <div className="reviews">
+              <img alt="" src={star} />
+              <span>
+                {starss} <span> ({reviews}) Reviews</span>
+              </span>
+            </div>
+            <ul className="ul">
+              {firstThreeItems.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <h2>{props.price} MKD</h2>
+          </div>
+          <div className="likes col-2">
+            
+            <div className="popUp" style={{ display: element }}>
+              <img
+                alt=""
+                className="star1"
+                src={star1}
+                onClick={handleEnter1}
+              />
+              <img
+                alt=""
+                className="star2"
+                src={star2}
+                onClick={handleEnter2}
+              />
+              <img
+                alt=""
+                className="star3"
+                src={star3}
+                onClick={handleEnter3}
+              />
+              <img
+                alt=""
+                className="star4"
+                src={star4}
+                onClick={handleEnter4}
+              />
+              <img
+                alt=""
+                className="star5"
+                src={star5}
+                onClick={handleEnter5}
+              />
+            </div>
+            <img
+              alt=""
+              src={theheart}
+              className="theHeart"
+              onClick={likeOnClickHandler}
+              onDoubleClick={reviewsOnClickHandler}
+            />
+            <div className="popUp2" style={{ display: element1 }}>
+              <div className="minus" onClick={countMinus}>
+                -
+              </div>
+              <div className="count">{counts}</div>
+              <div className="plus" onClick={countPlus}>
+                +
+              </div>
+            </div>
+            <img alt="" className="theLock" src={lock2} onClick={addToChart} />
+          </div>
+        </div>
+      </div>
+    );
 }
 
 export default Stocks;

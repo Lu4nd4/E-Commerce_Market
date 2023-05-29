@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import imgX from "../../../images/close.png" /*//SHTOJA QITO part 2 */
 
-const Description = ({classNames, hideDesc}) =>{
+const Description = (props) =>{
     return (
-        <div className={classNames}>
-            <img src={imgX} alt='' onClick={()=>hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
-            <h2>Hello</h2>
+        <div className={props.classNames}>
+            <img src={imgX} alt='' onClick={()=>props.hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
+            <h2>{props.description}</h2>
         </div>
     )
 }
