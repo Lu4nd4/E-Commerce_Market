@@ -6,6 +6,7 @@ import MainContainer from './components/maincontainer/maincontainer';
 import Nav from './components/nav/nav';
 import Stocks from './components/stocks/stocks';
 import Description from './components/stocks/description/description';
+import Contact from './components/contact/contact';
 
 const App = () => {
   const [thecount, setThecount] = useState(0)
@@ -46,6 +47,7 @@ const App = () => {
         </div>
       </div>
       <div>
+        <Contact/>
         <Footer />
         <Description/>
       </div>
