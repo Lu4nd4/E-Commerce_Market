@@ -1,6 +1,7 @@
 .desc{
     border: 5px solid black;
     display: flex;
+
     font-family: 'Noto Sans Symbols', sans-serif;
 }
 
@@ -126,8 +127,33 @@
     font-weight: bolder;
     font-size: large;
   }
+
+
+  .hideDescription{
+    display: none;
+  }
+  .showDescription{
+    display: block;
+    position: absolute;
+    background: #ececec;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 100;
+  }
+ 
+  .removeX{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 5px;
+    border-radius:50% ;
+  }
+  .removeX:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 20px -5px grey;
+  }
   
-  /* .ximage{
-    width: 20px;
-    margin-left: 900px;
-  } */
+

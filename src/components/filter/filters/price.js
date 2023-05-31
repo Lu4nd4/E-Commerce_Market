@@ -5,8 +5,10 @@ import circle1 from "../../../images/Ellipse 40.png"
 import rectangle from "../../../images/Rectangle 569.png"
 import circle2 from "../../../images/Ellipse 41.png"
 import {IfClicked} from '../filter'
+import { variables } from "../../../Variables";
 
 const Price = ({block, onClick}) => {
+    
     const starts = useContext(IfClicked)
     const [end, setEnd] = useState(300000)
     const [img2, setWidth] = useState(220)
@@ -37,6 +39,8 @@ const Price = ({block, onClick}) => {
         setEnd((percentage * 300000).toFixed())
         
     },[img2])
+
+
 
 
     return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './description.css';
-import product from "../../../images/iphone12purple.png";
+import "../../../App.css"
 import heart from "../../../images/heart.png";
 import imgX from "../../../images/close.png" /*//SHTOJA QITO part 2 */
 import stock from "../../../images/checked.png";
@@ -19,22 +19,21 @@ const Description = (props) => {
     
 
     return(
-        <div className={props.classNames} className="desc"> {/*className="desc"*/} {/*we need to add this class here*/}
-          {/* <img src={imgX} alt='' onClick={()=>props.hideDesc("true")} className="ximage"/> //SHTOJA QITO part 2 */}
-            <h2>{props.description}</h2>
-            <img className="col-5" src={product} alt="product"></img>
+        <div className={props.classNames}>
+          <img className="removeX" src={imgX} alt='' onClick={()=>props.hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
+            <img className="col-5" src={props.imageSource2} alt="product"></img>
+
             <div className="col-4 description">
-                <h2>SAMSUNG QLED QE55Q90R BRR12M001WWEG</h2>
+                <h2>{props.productName}</h2>
                 <h3>MKD <span>2,000.00</span></h3>
-                <h3>By <a>iPhone</a></h3>
+                <h3>By <a>{props.brand}</a></h3>
                 <hr></hr>
 
-                <img src={stock} className="instock" alt=""></img><span id="spanstock">In stock: 10</span>
+                <img src={stock} className="instock" alt=""></img><span id="spanstock">In stock: {props.stocks}</span>
                 
                 <p>COLOR: <span id="color">BROWN</span></p>
 
-                <p>Lorem ipsum dolorrcdtfvgbhjrxcdtfvgybhjnftg xrdctfvgbhxdcftvgybhne5drfgbh s4d5cfvygbuhnjimxdctfvygbh xcvgybhunjde5f6gbhunij xcdtfvgybhunctfvygbuhnk m cvfgybhunjkmj</p>
-
+                <p>{props.description}</p>
 
                 <div className="threediv">
                     <div className="input-with-buttons">
