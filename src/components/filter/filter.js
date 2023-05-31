@@ -79,18 +79,7 @@ const Filter = () => {
 
   return (
     <div >
-        {/* <div className="filter row">
-        <h3>FILTER BY: </h3>
-        <button onClick={resethandler}>Reset</button>
-        </div>
-        <div className="filters">
-          <IfClicked.Provider value={clicked}>
-            <Price onClick={dropdownHandler1} block={showBlockPrice}/>
-            <Brand onClick={dropdownHandler2} block={showBlockBrand}/>
-            <Color onClick={dropdownHandler3} theColor={color} block={showBlockColor}/>
-          </IfClicked.Provider>
-        </div> */}
-
+        
           <div className="filter row">
           <h3 onClick={dropdownHandler}>FILTERS: </h3>
             <button onClick={resethandler}>Reset</button>

@@ -13,6 +13,11 @@ const App = () => {
 
         //Backend
         const [product, setProduct] = useState([]);
+        const [product_color, setproduct_color] = useState([]);
+        const [ImageFilter, setImageFilter] = useState([]);
+        const [imageUrl, setImageUrl] = useState('');
+
+
         // const [modalTitle, setModalTitle] = useState("");
         // const [ProductName, setProductName] = useState("");
         // const [ProductId, setProductID] = useState(0);
@@ -24,10 +29,29 @@ const App = () => {
                 .then(data => {
                   setProduct(data);
                 });
-        };
-    
+              };
+
+              const refreshList3 = () => {
+                fetch(variables.API_URL + 'ImageFilter')
+                    .then(response => response.json())
+                    .then(data => {
+                      //const { imageUrl } = data.Image;
+                      setImageFilter(data);
+                    });
+                  };
+              
+              const refreshList2 = () => {
+                fetch(variables.API_URL + "product_color")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    setproduct_color(data);
+                  });
+              };
+              
         useEffect(() => {
             refreshList();
+            refreshList2();
+            refreshList3();
         }, []);
     
 
@@ -42,7 +66,7 @@ const App = () => {
   const [thecount6, setThecount6] = useState(0)
   const [thecount7, setThecount7] = useState(0)
   const [thecount8, setThecount8] = useState(0)
-  const [visible, setVisible] = useState("hideDescription") //SHTOJA QITO
+  const [visible, setVisible] = useState("hideDescription desc") //SHTOJA QITO
   const [visible2, setVisible2] = useState("false") //SHTOJA QITO part 2
 
   useEffect(()=>{
@@ -61,67 +85,53 @@ const App = () => {
    };
 
 
+
   const navbar = <Nav thecount={thecount} />;
   return (
     <div className="app">
       <MainContainer navbar={navbar}></MainContainer>
       <div className="row products">
-        <div className="col-3">
-
+        <div className="filtercolumn">
           <Filter />
         </div>
-        <div className="row mystocks">
-          {/* {product.map((prod) =>{
-           return (<Stocks key={prod.ProductID} 
-              productName={prod.ProductName}
-              price={prod.Price}
-              description={prod.Description}
-              category={prod.CategoryID}
-              setThecount={setThecount1}
-              toCloseDesc={visible2}
-              onClickFunction={onClickDescription}> 
-              </Stocks>
-
-              <Description 
-              classNames = {visible} 
-              hideDesc ={onClickDescription2}
-              description={prod.Description}
-              stocks={prod.Stocks}
-              brand={prod.Brand}
-              />)
-              
-
-          })} */}
+        <div className='mystocks'>
 
           {product.map((prod) => {
             return (
-              <React.Fragment key={prod.ProductID}>
+              <React.Fragment>
                 <Stocks
                   productName={prod.ProductName}
                   price={prod.Price}
                   description={prod.Description}
                   category={prod.CategoryID}
                   setThecount={setThecount1}
+                  id={prod.ProductID}
+                  idImg={ImageFilter.map(img => {if(prod.Product_ColorID === img.Product_ColorID) return img.Product_ColorID})}
                   toCloseDesc={visible2}
+                  imageSource ={ImageFilter.map(img => {if(prod.Product_ColorID === img.Product_ColorID) return img.Image})}
                   onClickFunction={onClickDescription}
-                >
-                  <Description
+                > </Stocks>
+                <Description
                   classNames={visible}
+                  // imageSource2 ={product_color.filter((prodCol,index2)=> {if(prodCol.ProductID==prod.ProductID) return prodCol.Image})}
                   hideDesc={onClickDescription2}
                   description={prod.Description}
+                  price={prod.Price}
+                  category={prod.CategoryID}
                   stocks={prod.Stocks}
+                  productName={prod.ProductName}
                   brand={prod.Brand}
                 />
-                </Stocks>
-                
+                  
               </React.Fragment>
             );
           })}
+
+          
         </div>
       </div>
       <div>
         <Footer />
-        <Description/>
       </div>
     </div>
   );

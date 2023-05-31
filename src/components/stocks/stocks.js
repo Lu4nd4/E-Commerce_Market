@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import "./stocks.css";
 import '../../App.css';
-import SamsungQled from "../../images/image 10.png";
 import lock2 from "../../images/lock2.png";
 // import arrows from "../../images/arrows.png";
 import heart from "../../images/heart 1.png";
@@ -18,6 +17,7 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
     const firstThreeItems = splitArray.slice(0, 3);
     
     
+
     
     const [theheart, setheart] = useState(heart)
     const [star1, setstar1] = useState(noFillstar)
@@ -154,42 +154,33 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
 
     const showMydescription=()=>{ //SHTOJA QITO
         setHideStock("none")
-        props.onClickFunction("showDescription") 
+        props.onClickFunction("showDescription desc") 
     }
 
     useEffect(()=>{ //SHTOJA QITO part 2
-        if(props.toCloseDesc == "true"){
+        if(props.toCloseDesc === "true"){
             setHideStock("block")
-            props.onClickFunction("hideDescription") 
+            props.onClickFunction("hideDescription desc") 
         }
     },[props.toCloseDesc])
 
-
-
+    const myimage = props.imageSource;
 
     return (
       <div
         className="stocks"
-        onClick={showMydescription}
         style={{ display: hideStock }}
       >
-        {props.children}
-        {" "}
-        {/*SHTOJA QITO */}
-        <div>
-          <img alt="" src={SamsungQled} className="monitor" />
-        </div>
+          {/* <img src={myimage} alt="" className="monitor" /> */}
+         <div 
+        onClick={showMydescription}><svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" fill="currentColor" className="bi bi-image-fill monitor" viewBox="0 0 16 16">
+  <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+</svg></div> 
         <h3>{props.productName}</h3>
-        {/* productName={prod.ProductName}
-              description={prod.Description}
-              price={prod.Price}
-              stocks={prod.Stocks}
-              category={prod.CategoryID}
-              brand={prod.Brand}
-              setThecount={setThecount1}
-              toCloseDesc={visible2}
-              onClickFunction={onClickDescription}> 
-              <Description classNames = {visible} hideDesc ={onClickDescription2}/> */}
+        {/* <h3>ID: {props.id}</h3>
+        <h3>Image ID: {props.idImg}</h3> */}
+        {/* <h5>{myimage}</h5> */}
+
         <div className="specs row">
           <div className="info col-9">
             <div className="reviews">

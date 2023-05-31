@@ -5,12 +5,14 @@
 .price ,.brand, .color{
     margin: 0;
     padding: 12px 0 12px 30px;
-    background: #f7f7f7; 
+    background: #f7f7f7;
+    position: relative;
 }
 .price span {
-    margin-left: 190px;
-    position: relative;
-    top: -3px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(-20%, -50%);
 }
 .dropdown1 > p {
     font-size: smaller;
@@ -29,14 +31,17 @@
     margin-right: -10px;
 }
 .brand span {
-    margin-left: 183px;
-    position: relative;
-    top: -3px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(-20%, -50%);
+
 }
 .color span {
-    margin-left: 186px;
-    position: relative;
-    top: -3px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(-20%, -50%);
 }
 .radious {
     border-radius: 0 0 15px 15px;

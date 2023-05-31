@@ -1,16 +1,15 @@
 .filter{
-    width: 70%;
+    width: 80.5%;
     background: #0092ca; 
     color: white;
     margin-top: 80px;
     margin-left: 30px;
-    padding-left: 25px; 
-    padding-right: 12px;
+
     justify-content: space-between;
     border-radius: 15px 15px 0 0 ;
   }
   .filter h3{
-    margin: 14px 0 12px 0;
+    margin: 14px 0 12px 30px;
   }
   .filter button{
     background: #0092ca; 
@@ -20,13 +19,14 @@
     padding: 0 15px;
     border-radius: 5px;
     font-size: 13px;
+    margin-right: 20px;
   }
   .filter button:hover{
     border: 1px solid rgba(255, 255, 255, 0.581);
   }
   .filters{
-    margin-left: 31px;
-    width: 77%;
+    margin-left: 30px;
+    width: 80%;
     border: 1px solid lightgrey;
     border-radius: 0 0 15px 15px;
   }
