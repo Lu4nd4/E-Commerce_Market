@@ -5,7 +5,7 @@ import heart from "../../../images/heart.png";
 import imgX from "../../../images/close.png" /*//SHTOJA QITO part 2 */
 import stock from "../../../images/checked.png";
 
-const Description = () => {
+const Description = (props) => {
 
     const [value, setValue] = useState(0);
 
@@ -19,8 +19,8 @@ const Description = () => {
     
 
     return(
-        <div className="desc" className={props.classNames}>
-          <img src={imgX} alt='' onClick={()=>props.hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
+        <div className={props.classNames} className="desc"> {/*className="desc"*/} {/*we need to add this class here*/}
+          {/* <img src={imgX} alt='' onClick={()=>props.hideDesc("true")} className="ximage"/> //SHTOJA QITO part 2 */}
             <h2>{props.description}</h2>
             <img className="col-5" src={product} alt="product"></img>
             <div className="col-4 description">

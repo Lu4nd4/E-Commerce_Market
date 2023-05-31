@@ -154,13 +154,13 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
 
     const showMydescription=()=>{ //SHTOJA QITO
         setHideStock("none")
-        props.onClickFunction("showDescription") 
+        props.onClickFunction("showDescription desc") 
     }
 
     useEffect(()=>{ //SHTOJA QITO part 2
         if(props.toCloseDesc == "true"){
             setHideStock("block")
-            props.onClickFunction("hideDescription") 
+            props.onClickFunction("hideDescription desc") 
         }
     },[props.toCloseDesc])
 

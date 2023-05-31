@@ -6,6 +6,7 @@ import arrow from "../../images/Vector 19.png";
 import cart from "../../images/Ellipse 24.png";
 import Login from './loginPage/login';
 import logo from '../../images/logonano.png';
+import greyheart from "../../images/greyheart.png";
 
 const Nav = ({thecount}) => {
 
@@ -28,6 +29,13 @@ const Nav = ({thecount}) => {
     const [handleAcc, setHandleAccount] = useState("Log In")
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
+
+    const [isBoxOpen, setIsBoxOpen] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+    const [showList, setShowList] = useState(false);
+    const [products, setProducts] = useState([]);
+
+
     const showElement = () =>{
         if(show === "none") setShow("block")
         else setShow("none")
@@ -56,6 +64,8 @@ const Nav = ({thecount}) => {
         }
     }
     const loginHandler = () =>{
+        setShowLogin(true);
+        setShowList(false);
         if(login === "none"){
           setLogin("block")  
         } 
@@ -66,16 +76,28 @@ const Nav = ({thecount}) => {
         else setShowcart("none")
     },[thecount])
 
+    
+
+    const imageHandler = () => {
+        setIsBoxOpen(!isBoxOpen);
+        setShowLogin(false);
+        setShowList(true);
+    };
+
+    const handleAddProduct = () => {
+        setProducts(prevProducts => [...prevProducts, `Product ${prevProducts.length + 1}`]);
+    };
+
     return (
         <div className='navbar row'>
             <div style={{display: loginform}} className="form">
                 <Login submits={setLoginform} name={setName} surname={setSurname} setB={setSetAccount} setA={setSetAccount1} setbutton={setHandleAccount}/>
             </div>
-            {/* <h1 className='col-2 logon'>NanoTx</h1> */}
             <img src={logo} className='col-2 logon'></img>
             <div className='col-6 extranav'>
                 <input className='search'  placeholder='Search Here...' /> <br></br>
                 <div className='category'>
+                    <h3>All</h3>
                     <h3>Phones</h3>
                     <h3>TVs</h3>
                     <h3>Laptops</h3>
@@ -83,7 +105,7 @@ const Nav = ({thecount}) => {
                 </div>
             </div>
             <div className=' icons row'>
-                <div className='dropdown'>
+                {/* <div className='dropdown'>
                     <div style={{display: show}}>
                     <span onClick={() => setSelected("AL")}>AL</span>
                     <span onClick={() => setSelected("MK")}>MK</span>
@@ -91,17 +113,57 @@ const Nav = ({thecount}) => {
                     </div>
                     <h3 onClick={showElement}>{selected}<img src={arrow} alt='_'/></h3>
                     
-                </div>
-                <img src={lock} alt='lock' className='lock'/>
-                <div><img src={cart} alt='lock' className='cart' style={{display: Showcart}}/>
-                <p className='cartp' style={{display: Showcart}}>{thecount}</p></div>
-                <img src={profile} alt='profile' onClick={loginHandler}/>
-                <div style={{display: login}} className="login">
+                </div> */}
 
-                    <h5 style={{display: account1}}>Not logged in</h5>
-                    <h5 style={{display: account}}>{name} {surname}</h5>
+                
+
+                <img src={profile} alt='profile' onClick={loginHandler} />
+                {showLogin && <div style={{ display: login }} className="login">
+
+                    <h5 style={{ display: account1 }}>Not logged in</h5>
+                    <h5 style={{ display: account }}>{name} {surname}</h5>
                     <button onClick={loginForm}>{handleAcc}</button>
-                </div>
+                </div>}
+
+                {/* <img src={lock} alt='lock' className='lock'/> */}
+                {/* <div><img src={cart} alt='lock' className='cart' style={{display: Showcart}}/>
+                <p className='cartp' style={{display: Showcart}}>{thecount}</p></div> */}
+
+    <div className="product-box">
+      <img
+        src={lock}
+        alt="Lock"
+        className={`lock ${isBoxOpen ? 'open' : ''}`}
+        onClick={imageHandler}
+      />
+      {isBoxOpen && (
+        <div className="product-list">
+          <h2>Product List</h2>
+          <ul>
+            {products.map((product, index) => (
+              <li key={index}>{product}</li>
+            ))}
+          </ul>
+          <button onClick={handleAddProduct}>Add Product</button>
+        </div>
+      )}
+    </div>
+
+                {/* <div className="product-list">
+                    <div className={`lock-image ${isLocked ? 'locked' : ''}`} onClick={handleLockClick} />
+                    <button onClick={handleAddProduct}>Add Product</button>
+                    {isLocked && (
+                        <ul>
+                            {products.map((product, index) => (
+                                <li key={index}>{product}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div> */}
+
+                <img src={greyheart} className='gheart'></img>
+
+                
             </div>
         </div>
     )

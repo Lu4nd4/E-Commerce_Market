@@ -1,0 +1,71 @@
+.padding{
+    padding: 5rem !important;
+    border: 1px solid black;
+    display: flex;
+}
+
+.form-control:focus {
+   box-shadow: 10px 0px 0px 0px #ffffff !important;
+   border-color: #4ca746;
+}
+
+.titlecc{
+    text-align: center;
+    
+}
+
+.card-body{
+    margin-top: 100px;
+    margin-left: -800px;
+}
+
+.titlevisa{
+    margin-left: 400px;
+    border: 1 px solid green;
+    display: flex;
+}
+
+.visaimg{
+    margin-left: 200px;
+    width: 80px;
+    height: 80px;
+}
+
+.mastercardimg{
+    width: 80px;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+
+.form-control{
+    height: 44px;
+    width: 300px;
+    border: 1px solid #706e6e;
+    margin-left: 100px;
+}
+
+.control-label{
+    /* border: 1px solid black; */
+    padding: 20px;
+    text-align: start;
+}
+.cardNumber {
+    padding-right: 85px;
+}
+.caedExpiry{
+    padding-right: 100px;
+}
+.cardCVC {
+    padding-right: 120px;
+}
+.cardHolder{
+    padding-right: 40px;
+}
+
+.text-center{
+    margin-left: 250px;
+    margin-top: 30px;
+}

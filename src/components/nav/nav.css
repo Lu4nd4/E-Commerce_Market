@@ -10,7 +10,7 @@
 }
 
 .extranav h3{
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Noto Sans Symbols', sans-serif;
     justify-content: space-around;
     display: inline;
     margin-left: 8%;
@@ -20,7 +20,7 @@
     font-weight: bolder;
 }
 .category{
-    margin-left: 22%;
+    margin-left: 19%;
     margin-top: 50px;
 }
 
@@ -111,13 +111,13 @@
 .dropdown div span:hover{
     font-weight: 500;
 }
-.cart{
+/* .cart{
     position: absolute;
     top: 45px;
     margin-left: -50px;
     height: 20px;
-}
-.cartp{
+} */
+/* .cartp{
     position: absolute;
     padding: 0;
     margin: 3px 0 0 -44px;
@@ -125,20 +125,22 @@
     font-size: smaller;
     color:#05111f;
     opacity: 0.7;
-}
+} */
 .login{
     position: absolute;
     background: #07192ce7;
     border: 1px solid #0e3a65ab;
     border-radius: 2px 2px 5px 5px;
-    top: 70px;
-    right: 50px;
+    top: 90px;
+    right: 150px;
     padding-left: 20px;
     padding-right: 70px;
+    width: 150px;
+    height: auto;
 }
 .login button{
     color: white;
-    background: #0092ca;
+    background: #0880e8;
     margin-bottom: 20px;
     padding: 10px 25px;
     border: 1px solid #031d27;
@@ -149,11 +151,62 @@
 }
 
 .logon{
-    /* font-family: 'Bruno Ace SC', cursive;
-    font-family: 'Permanent Marker', cursive !important; */
-    /* font-size: 45px; */
-
     margin: 0;
     padding: 0;
 }
 
+.gheart{
+    width: 26px;
+    height: 26px;
+    margin-left: -70px;
+}
+
+.product-box {
+    display: flex;
+    margin-left: -55px;
+    position: relative;
+  }
+  
+  .lock {
+    width: 22px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: -20px;
+  }
+  
+  .product-list {
+    background-color: #07192ce7;
+    border: 1px solid #0e3a65ab;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 45px;
+    width: 400px;
+    height: auto;
+    padding: 7px;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* li {
+    margin-bottom: 5px;
+  } */
+  
+  /* button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  } */
+  

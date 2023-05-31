@@ -9,8 +9,8 @@ const Contact = (props) => {
         <section id={props.id} className="contact row">
             <div className="containeri">
 
-                <div className="contitle col-12">
-                    <h2>Contact Us</h2>
+                <div className="titlecon col-12">
+                    <h1>Contact Us</h1>
                 </div>
 
                 <div className="row">
@@ -26,7 +26,7 @@ const Contact = (props) => {
                             <div className="email">
                                 <i><img src={mail} alt='mail' className='mail'/></i>
                                 <h4>Email:</h4>
-                                <p>bas-tutifruti@bastutifruti.com</p>
+                                <p>nanotx@nanotx.com</p>
                             </div>
 
                             <div className="phone">

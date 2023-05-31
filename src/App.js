@@ -8,6 +8,7 @@ import Stocks from './components/stocks/stocks';
 import Description from './components/stocks/description/description';
 import { variables } from "./Variables";
 import Contact from './components/contact/contact';
+import Payment from './components/payment/payment';
 
 const App = () => {
 
@@ -18,17 +19,17 @@ const App = () => {
         // const [ProductId, setProductID] = useState(0);
         // const [description, setDescription] = useState("");
     
-        const refreshList = () => {
-            fetch(variables.API_URL + 'product')
-                .then(response => response.json())
-                .then(data => {
-                  setProduct(data);
-                });
-        };
+        // const refreshList = () => {
+        //     fetch(variables.API_URL + 'product')
+        //         .then(response => response.json())
+        //         .then(data => {
+        //           setProduct(data);
+        //         });
+        // };
     
-        useEffect(() => {
-            refreshList();
-        }, []);
+        // useEffect(() => {
+        //     refreshList();
+        // }, []);
     
 
      
@@ -42,7 +43,7 @@ const App = () => {
   const [thecount6, setThecount6] = useState(0)
   const [thecount7, setThecount7] = useState(0)
   const [thecount8, setThecount8] = useState(0)
-  const [visible, setVisible] = useState("hideDescription") //SHTOJA QITO
+  const [visible, setVisible] = useState("hideDescription desc") //SHTOJA QITO
   const [visible2, setVisible2] = useState("false") //SHTOJA QITO part 2
 
   useEffect(()=>{
@@ -120,9 +121,12 @@ const App = () => {
         </div>
       </div>
       <div>
-        <Contact/>
+        
         <Footer />
+        <Contact/>
         <Description/>
+
+        <Payment/>
       </div>
     </div>
   );
