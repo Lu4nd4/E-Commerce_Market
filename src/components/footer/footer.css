@@ -1,49 +1,36 @@
 .footer{
     border-top: 1px solid rgba(211, 211, 211, 0.609);
+    border-bottom: 1px solid rgba(211, 211, 211, 0.609);
     margin-top: 70px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
 }
-.bluepart{
-    background: #02498f;
-    height: 70px;
-    border-radius: 0 25px 0 0 ;
-    color: white;
-    text-align: center;
-}
+
 .footerlogos{
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
-.ps4{
-    height: 100px;
-    margin-top: -30px;
-    z-index: -15;
+.apple{
+    height: 70px;
+    margin-top: 3px;
 }
 .lg{
-    height: 80px;
-    margin-top: -10px;
-    z-index: -15;
+    height: 90px;
+    margin-left: 150px;
 }
 .samsung{
-    height: 110px;
-    margin-top: -40px;
-    z-index: -15;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: 130px;
 }
-.germin{
-    height: 100px;
-    margin-top: -30px;
-    z-index: -15;
+.sony{
+    height: 85px;
+    margin-top: 5px;
+    margin-left: 130px;
 }
-.tefal{
-    height: 50px;
+.asus{
+    height: 80px;
     margin-top: 10px;
-}
-.footerarrow{
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-top: 15px;
-}
-.footerarrow img{
-    margin-top: 8px;
-    margin-left: 8px;
+    margin-left: 130px;
 }

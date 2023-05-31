@@ -7,7 +7,6 @@
     left: 0;
     bottom: 0;
     right: 0;
-
     background:#07192ce7;
 }
 .emailform{
@@ -51,7 +50,7 @@
 }
 .text-center button{
     color: white;
-    background: #0092ca;
+    background: #0880e8;
     margin-bottom: 20px;
     padding: 15px 28px;
     font-size: 14px;
@@ -64,8 +63,17 @@
     margin-top: -2px;
     margin-bottom: 16px;
 }
+.signUp{
+    background-color: #03335c;
+    width: 220px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 370px;
+}
 .signUp span{
-    color: #0092ca;
+    color: #0880e8;
 }
 .signUp span:hover{
     text-decoration: underline;

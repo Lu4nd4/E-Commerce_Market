@@ -8,11 +8,11 @@ import {IfClicked} from '../filter'
 
 const Price = ({block, onClick}) => {
     const starts = useContext(IfClicked)
-    const [end, setEnd] = useState(2000)
+    const [end, setEnd] = useState(300000)
     const [img2, setWidth] = useState(220)
     const [img3, setWidth2] = useState(220)
     useEffect(()=>{
-        setEnd(2000)
+        setEnd(300000)
         setWidth(220)
         setWidth2(220)
     }, [starts])
@@ -34,7 +34,7 @@ const Price = ({block, onClick}) => {
 
     useEffect(()=>{
         let percentage = img2 / 220;
-        setEnd((percentage * 2000).toFixed())
+        setEnd((percentage * 300000).toFixed())
         
     },[img2])
 
@@ -46,7 +46,7 @@ const Price = ({block, onClick}) => {
 
             <div className="dropdown1" style={{display: block}}>
                 <p>Price Range Selected</p>
-                <p>$10 - ${end}</p>
+                <p>MKD 1,000 - MKD {end}</p>
 
                 <div className="pricerange row">
                     <img alt="Hello"  src={circle1} width= "20px" height= "20px" className="imgrange1"/>
