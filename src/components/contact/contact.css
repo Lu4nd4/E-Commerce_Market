@@ -1,0 +1,126 @@
+.contact {
+    display: flex;
+  }
+
+  .titlecon{
+    margin-left: 800px;
+    color: #054a85;
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    font-family: 'Noto Sans Symbols', sans-serif;
+
+  }
+  
+  .containeri {
+    position: relative;
+  }
+  
+  .info{
+    margin-left: 300px;                                 
+  }
+  
+  .contact .info i {
+    font-size: 20px;
+    background: #0880e8;
+    color: #fff;
+    float: left;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+  }
+  
+  .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #043c6d;
+  }
+  
+  .contact .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    color: #444444;
+    font-size: 30px;
+    width: 500px;
+  }
+  
+  .contact .info .email,
+  .contact .info .phone {
+    margin-top: 40px;
+  }
+  
+  .contact .php-email-form {
+    background: #fff;
+    margin-right: 600px;
+    margin-top: 30px;
+  }
+  
+  .contact .php-email-form .form-group {
+    padding-bottom: 20px;
+  }
+  
+  .contact .php-email-form input,
+  .contact .php-email-form textarea {
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  
+  .contact .php-email-form input {
+    height: 44px;
+    width: 300px;
+    border: 1px solid #706e6e;
+  }
+  
+  .contact .php-email-form textarea {
+    padding: 10px 12px;
+    width: 620px;
+    border: 1px solid #706e6e;
+  }
+
+  .php-email-form #name {
+    margin-right: 20px;
+  }
+
+  .php-email-form #subject{
+    width: 620px;
+  }
+  
+  .contact .php-email-form button[type=submit] {
+    padding: 10px 32px;
+    font-size: 18px;
+    color: #0880e8;
+    transition: 0.4s;
+    border-radius: 50px;
+    border: 2px solid #0880e8;
+    background: #fff; 
+    margin-left: 220px;
+  }
+  
+  .contact .php-email-form button[type=submit]:hover {
+    background: #0880e8;
+    color: #fff;
+  }
+
+  .geo{
+    width: 35px;
+    height: 35px;
+  }
+
+  .mail{
+    width: 32px;
+    height: 32px;
+  }
+
+  .mobile{
+    width: 40px;
+    height: 40px;
+  }

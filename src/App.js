@@ -7,7 +7,8 @@ import Nav from './components/nav/nav';
 import Stocks from './components/stocks/stocks';
 import Description from './components/stocks/description/description';
 import { variables } from "./Variables";
-
+import Contact from './components/contact/contact';
+import Payment from './components/payment/payment';
 
 const App = () => {
 
@@ -22,7 +23,7 @@ const App = () => {
         // const [ProductName, setProductName] = useState("");
         // const [ProductId, setProductID] = useState(0);
         // const [description, setDescription] = useState("");
-    
+  
         const refreshList = () => {
             fetch(variables.API_URL + 'product')
                 .then(response => response.json())
@@ -53,6 +54,7 @@ const App = () => {
             refreshList2();
             refreshList3();
         }, []);
+
     
 
      
@@ -131,7 +133,13 @@ const App = () => {
         </div>
       </div>
       <div>
+        
         <Footer />
+
+        <Contact/>
+        <Description/>
+
+        <Payment/>
       </div>
     </div>
   );

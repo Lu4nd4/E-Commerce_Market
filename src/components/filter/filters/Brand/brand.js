@@ -19,16 +19,16 @@ const Brand = ({block, onClick}) => {
             
             <div className="dropdown1 lists" style={{display: block}}>
                     <Listss text="All" filterAll={filterAllHandler} setAll={trueAll}/>
-                    <Listss text="LG" filterAll={filterAllHandler} setAll={falseAll}/>
-                    <Listss text="Loewe" filterAll={filterAllHandler} setAll={falseAll}/>
-                    <Listss text="Panasonic" filterAll={filterAllHandler} setAll={falseAll}/>
-                    <Listss text="Philips" filterAll={filterAllHandler} setAll={falseAll}/>
-                    <Listss text="Salora" filterAll={filterAllHandler} setAll={falseAll}/>
+                    <Listss text="Apple" filterAll={filterAllHandler} setAll={falseAll}/>
                     <Listss text="Samsung" filterAll={filterAllHandler} setAll={falseAll}/>
+                    <Listss text="LG" filterAll={filterAllHandler} setAll={falseAll}/>
+                    <Listss text="Asus" filterAll={filterAllHandler} setAll={falseAll}/>
+                    <Listss text="Sony" filterAll={filterAllHandler} setAll={falseAll}/>
+                    {/* <Listss text="Samsung" filterAll={filterAllHandler} setAll={falseAll}/>
                     <Listss text="Sharp" filterAll={filterAllHandler} setAll={falseAll}/>
                     <Listss text="Sony" filterAll={filterAllHandler} setAll={falseAll}/>
                     <Listss text="Tcl" filterAll={filterAllHandler} setAll={falseAll}/>
-                    <Listss text="Thomson" filterAll={filterAllHandler} setAll={falseAll}/>
+                    <Listss text="Thomson" filterAll={filterAllHandler} setAll={falseAll}/> */}
             </div>
         </div>
     )

@@ -22,6 +22,7 @@ const Description = (props) => {
         <div className={props.classNames}>
           <img className="removeX" src={imgX} alt='' onClick={()=>props.hideDesc("true")}/> {/*//SHTOJA QITO part 2 */}
             <img className="col-5" src={props.imageSource2} alt="product"></img>
+
             <div className="col-4 description">
                 <h2>{props.productName}</h2>
                 <h3>MKD <span>2,000.00</span></h3>

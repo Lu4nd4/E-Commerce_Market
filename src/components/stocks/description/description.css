@@ -1,9 +1,8 @@
 .desc{
     border: 5px solid black;
     display: flex;
-    font-family: 'Outfit', sans-serif;
 
-    border: 1px solid red;
+    font-family: 'Noto Sans Symbols', sans-serif;
 }
 
 .description span {
@@ -13,7 +12,7 @@
 .description a{
     text-decoration: underline;
     text-underline-offset: 5px;
-    color: #41CDE2;
+    color: #0880e8;
 }
 
 .description h2{
@@ -56,8 +55,8 @@
 }
 
 .addtc:hover{
-    background-color: #41CDE2;
-    border: 1px solid #41CDE2;
+    background-color: #0880e8;
+    border: 1px solid #0880e8;
 }
 
 .threediv{
@@ -68,7 +67,7 @@
 .bluheart{
     width: 4%;
     height: 4%;
-    border: 1px solid #41CDE2;
+    border: 1px solid #0880e8;
     padding: 13px;
     margin-left: 20px;
     margin-top: 13px;
@@ -84,7 +83,7 @@
     justify-content: center;
     height: 50px;
     margin-top: 15px;
-    border: 1px solid #41CDE2;
+    border: 1px solid #0880e8;
   }
   
   .minus-button,
@@ -103,7 +102,7 @@
   }
 
   .minus-button:hover{
-    background-color: #41CDE2;
+    background-color: #0880e8;
     color: white;
   }
   
@@ -114,7 +113,7 @@
   }
 
   .plus-button:hover{
-    background-color: #41CDE2;
+    background-color: #0880e8;
     color: white;
   }
   
@@ -128,6 +127,7 @@
     font-weight: bolder;
     font-size: large;
   }
+
 
   .hideDescription{
     display: none;
@@ -156,3 +156,4 @@
     box-shadow: 1px 1px 20px -5px grey;
   }
   
+
