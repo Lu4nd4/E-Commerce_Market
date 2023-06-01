@@ -98,10 +98,12 @@ const Description = () => {
 
                   <img src={heart} className="bluheart"></img>
                 </div>
+                 <button className="payment">PROCEED TO PAYMENT</button>
               </div>
             </div>))}
         
             
+
         </div>
     )
 }
