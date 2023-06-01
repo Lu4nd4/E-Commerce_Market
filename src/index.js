@@ -3,13 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+
+import Description from '../src/components/stocks/description/description';
+import Stocks from './components/stocks/stocks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/description" element={<Description/>}/>
+        <Route path="/description/:id" element={<Description/>} />
+        <Route path="/Stocks" element={<Stocks/>} />
+        {/* Define other routes if needed */}
+      </Routes>
+      <App />
+    </Router>
   </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

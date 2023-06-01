@@ -1,7 +1,5 @@
 .desc{
-    border: 5px solid black;
     display: flex;
-
     font-family: 'Noto Sans Symbols', sans-serif;
 }
 
@@ -18,6 +16,7 @@
 .description h2{
   font-size: 2rem;
   margin-top: 70px;
+  color: black;
 }
 
 #color{

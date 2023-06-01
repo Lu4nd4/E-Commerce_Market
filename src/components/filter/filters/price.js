@@ -11,34 +11,34 @@ const Price = ({block, onClick}) => {
     
     const starts = useContext(IfClicked)
     const [end, setEnd] = useState(300000)
-    const [img2, setWidth] = useState(220)
-    const [img3, setWidth2] = useState(220)
+    const [img2, setWidth] = useState(200)
+    const [img3, setWidth2] = useState(200)
     useEffect(()=>{
         setEnd(300000)
-        setWidth(220)
-        setWidth2(220)
+        setWidth(200)
+        setWidth2(200)
     }, [starts])
 
     function handleDrag(e) {
         setWidth(prevState => {
-            if(prevState > 221)
-            return 220
+            if(prevState > 201)
+            return 200
             else
             return e.clientX - 80
         } )
         setWidth2(prevState => {
-            if(prevState > 221)
-            return 220
+            if(prevState > 201)
+            return 200
             else
             return img2
         } )
     }
 
     useEffect(()=>{
-        let percentage = img2 / 220;
+        let percentage = img2 / 200;
         setEnd((percentage * 300000).toFixed())
         
-    },[img2])
+    },[img2,img3])
 
 
 

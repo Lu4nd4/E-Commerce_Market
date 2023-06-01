@@ -2,19 +2,20 @@ import React, { useState, useEffect} from "react";
 import "./stocks.css";
 import '../../App.css';
 import lock2 from "../../images/lock2.png";
-// import arrows from "../../images/arrows.png";
 import heart from "../../images/heart 1.png";
 import star from "../../images/star.png";
 import redHeart from "../../images/reheart.png";
 import noFillstar from "../../images/emptystar.png";
 import { variables } from "../../Variables";
+import { Link, useParams } from 'react-router-dom';
 
 
 const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
     //Backend
+    const splitArray = props.description && props.description.split(',');
 
-    const splitArray = props.description.split(',');
-    const firstThreeItems = splitArray.slice(0, 3);
+    const firstThreeItems = splitArray && splitArray.slice(0, 3);
+
     
     
 
@@ -30,7 +31,6 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
     const [element1, setElement1] = useState('none')
     const [starss, setStarss] = useState(4.5)
     const [reviews, setReviews] = useState(10)
-    const [hideStock, setHideStock] = useState("block")//SHTOJA QITO
 
     const addToChart = () =>{
         if(element1 === "none")
@@ -152,37 +152,28 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
         props.setThecount(counts)
     }, [counts, props.setThecount])
 
-    const showMydescription=()=>{ //SHTOJA QITO
-        setHideStock("none")
-        props.onClickFunction("showDescription desc") 
-    }
-
-    useEffect(()=>{ //SHTOJA QITO part 2
-        if(props.toCloseDesc === "true"){
-            setHideStock("block")
-            props.onClickFunction("hideDescription desc") 
-        }
-    },[props.toCloseDesc])
-
-    const myimage = props.imageSource;
-
+const linkClicked = ()=>{
+  setShowDiv("none")
+}
     return (
-      <div
-        className="stocks"
-        style={{ display: hideStock }}
-      >
-          {/* <img src={myimage} alt="" className="monitor" /> */}
-         <div 
-        onClick={showMydescription}><svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" fill="currentColor" className="bi bi-image-fill monitor" viewBox="0 0 16 16">
-  <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
-</svg></div> 
+      <div className="stocks">
+        {/* <img src={myimage} alt="" className="monitor" /> */}
+        <Link to={"/description/" + props.id}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="300"
+            height="200"
+            fill="currentColor"
+            className="bi bi-image-fill monitor"
+            viewBox="0 0 16 16"
+            onClick={linkClicked}
+          >
+            <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+          </svg>
+        </Link>
         <h3>{props.productName}</h3>
-        {/* <h3>ID: {props.id}</h3>
-        <h3>Image ID: {props.idImg}</h3> */}
-        {/* <h5>{myimage}</h5> */}
-
         <div className="specs row">
-          <div className="info col-9">
+          <div className="info">
             <div className="reviews">
               <img alt="" src={star} />
               <span>
@@ -196,8 +187,8 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
             </ul>
             <h2>{props.price} MKD</h2>
           </div>
-          <div className="likes col-2">
-            
+
+          <div className="likes">
             <div className="popUp" style={{ display: element }}>
               <img
                 alt=""
@@ -245,7 +236,6 @@ const Stocks = (props) => { //SHTOJA QITO {/*//SHTOJA QITO part 2 */}
               <div className="plus" onClick={countPlus}>
                 +
               </div>
-
             </div>
             <img alt="" className="theLock" src={lock2} onClick={addToChart} />
           </div>

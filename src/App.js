@@ -5,7 +5,6 @@ import Footer from './components/footer/footer';
 import MainContainer from './components/maincontainer/maincontainer';
 import Nav from './components/nav/nav';
 import Stocks from './components/stocks/stocks';
-import Description from './components/stocks/description/description';
 import { variables } from "./Variables";
 import Contact from './components/contact/contact';
 import Payment from './components/payment/payment';
@@ -77,14 +76,7 @@ const App = () => {
     })
   },[thecount1,thecount2,thecount3,thecount4,thecount5,thecount6])
 
-   const onClickDescription =(show)=>{ //SHTOJA QITO
-       setVisible(show)
-       setVisible2("false") //SHTOJA QITO part 2
-   }
-   const onClickDescription2 = (clicked) => {
-     //SHTOJA QITO part 2
-     setVisible2(clicked);
-   };
+ 
 
 
 
@@ -100,7 +92,7 @@ const App = () => {
 
           {product.map((prod) => {
             return (
-              <React.Fragment>
+              <React.Fragment key={prod.ProductID}>
                 <Stocks
                   productName={prod.ProductName}
                   price={prod.Price}
@@ -111,19 +103,8 @@ const App = () => {
                   idImg={ImageFilter.map(img => {if(prod.Product_ColorID === img.Product_ColorID) return img.Product_ColorID})}
                   toCloseDesc={visible2}
                   imageSource ={ImageFilter.map(img => {if(prod.Product_ColorID === img.Product_ColorID) return img.Image})}
-                  onClickFunction={onClickDescription}
                 > </Stocks>
-                <Description
-                  classNames={visible}
-                  // imageSource2 ={product_color.filter((prodCol,index2)=> {if(prodCol.ProductID==prod.ProductID) return prodCol.Image})}
-                  hideDesc={onClickDescription2}
-                  description={prod.Description}
-                  price={prod.Price}
-                  category={prod.CategoryID}
-                  stocks={prod.Stocks}
-                  productName={prod.ProductName}
-                  brand={prod.Brand}
-                />
+                
                   
               </React.Fragment>
             );
@@ -137,7 +118,6 @@ const App = () => {
         <Footer />
 
         <Contact/>
-        <Description/>
 
         <Payment/>
       </div>
