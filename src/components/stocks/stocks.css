@@ -27,18 +27,19 @@
     transform: translate(-50%, 0);
    
 }
-
-
-
 /* .stokmonitor{
     position: absolute;
 }
-
 .stokmonitor:hover{
     width: 120%;
     margin-left: -8%;
     /* margin-bottom: 2%; 
 } */
+.reviews{
+    margin-left: -20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 .reviews img{
     margin-right: 10px;
 }
@@ -53,8 +54,10 @@
 }
 .ul{
     color: gray;
-    margin-left: -20px;
+    list-style-type: square;
+    width: 100%;
 }
+
 .likes{
     display: flex;
     flex-direction: column;
@@ -95,8 +98,8 @@
     border: 1px solid lightgrey;
 
     display: flex;
-    margin-top: 138px;
-    margin-left: 5px;
+    margin-top: 178px;
+    margin-left: 150px;
     border-radius: 4px;
     justify-content: space-around;
     position: absolute;
@@ -104,6 +107,7 @@
     background-color: white;
     align-items: center;
 }
+
 .plus, .count, .minus{
     display: inline-block;
     margin: 0;
@@ -122,12 +126,22 @@
     width:40%;
 }
 .info{
+    position: absolute;
     padding-bottom: 30px;
+    margin: 0;
+    padding: 0;
+    top: 230px;
+    bottom: 0;
+    left: -270px;
+    width: 70%;
+    height: auto;
 }
 .info h2:nth-child(3){
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 00px;
+    font-size: 1.5rem;
+    color: black;
 }
 .theLock{
     position: absolute;
