@@ -43,10 +43,14 @@ const Description = (props) => {
                     <button id="plus" className="plus-button" onClick={handlePlusClick}>+</button>
                     </div>
 
-                    <p className="addtc">ADD TO CART</p>
+                    <button className="addtc">ADD TO CART</button>
 
                     <img src={heart} className="bluheart"></img>
+
+                    
                 </div>
+                
+                <button className="payment">PROCEED TO PAYMENT</button>
                 
 
             </div>

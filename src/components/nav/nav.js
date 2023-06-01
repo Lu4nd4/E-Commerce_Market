@@ -33,6 +33,7 @@ const Nav = ({thecount}) => {
     const [isBoxOpen, setIsBoxOpen] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showList, setShowList] = useState(false);
+    const [showFavorit, setShowFavorit] = useState(false);
     const [products, setProducts] = useState([]);
 
 
@@ -66,6 +67,7 @@ const Nav = ({thecount}) => {
     const loginHandler = () =>{
         setShowLogin(true);
         setShowList(false);
+        setShowFavorit(false);
         if(login === "none"){
           setLogin("block")  
         } 
@@ -79,14 +81,21 @@ const Nav = ({thecount}) => {
     
 
     const imageHandler = () => {
-        setIsBoxOpen(!isBoxOpen);
+       
         setShowLogin(false);
         setShowList(true);
+        setShowFavorit(false);
     };
 
-    const handleAddProduct = () => {
-        setProducts(prevProducts => [...prevProducts, `Product ${prevProducts.length + 1}`]);
-    };
+    const favoritimg = () => {
+        setShowFavorit(true);
+        setShowList(false);
+        setShowLogin(false);
+    }
+
+    // const handleAddProduct = () => {
+    //     setProducts(prevProducts => [...prevProducts, `Product ${prevProducts.length + 1}`]);
+    // };
 
     return (
         <div className='navbar row'>
@@ -136,15 +145,21 @@ const Nav = ({thecount}) => {
         className={`lock ${isBoxOpen ? 'open' : ''}`}
         onClick={imageHandler}
       />
-      {isBoxOpen && (
+      {showList && (
         <div className="product-list">
-          <h2>Product List</h2>
+          <h2 className='productList'>Product List</h2>
+          <ul>
+            <li className='product'>
+                <p className='titlep'>Product 1(Titile of the product)</p>
+                <p>200.00 MKD</p>
+            </li>
+          </ul>
           <ul>
             {products.map((product, index) => (
               <li key={index}>{product}</li>
             ))}
           </ul>
-          <button onClick={handleAddProduct}>Add Product</button>
+          <button  className='viewall'>View All</button>
         </div>
       )}
     </div>
@@ -161,8 +176,29 @@ const Nav = ({thecount}) => {
                     )}
                 </div> */}
 
-                <img src={greyheart} className='gheart'></img>
+                <div className='favorit-box'>
+                <img src={greyheart} className='gheart' onClick={favoritimg}></img>
 
+                {showFavorit && (
+        <div className="favorit-list">
+          <h2 className='favoritList'>Favorite List</h2>
+          <ul>
+            <li className='product'>
+                <p className='titlefavorit'>Product 1(Titile of the product)</p>
+                <p>200.00 MKD</p>
+            </li>
+          </ul>
+          {/* <ul>
+            {products.map((product, index) => (
+              <li key={index}>{product}</li>
+            ))}
+          </ul> */}
+          {/* <button  className='viewfavorit'>View All</button> */}
+        </div>
+      )}
+
+                </div>
+               
                 
             </div>
         </div>
