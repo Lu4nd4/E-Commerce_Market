@@ -77,7 +77,9 @@ const App = () => {
   },[thecount1,thecount2,thecount3,thecount4,thecount5,thecount6])
 
  
-
+ const linkClicked = (show)=>{
+    setShowDiv(show? "none": "block")
+  }
 
 
   const navbar = <Nav thecount={thecount} />;
@@ -94,6 +96,7 @@ const App = () => {
             return (
               <React.Fragment key={prod.ProductID}>
                 <Stocks
+                  removed={linkClicked}
                   productName={prod.ProductName}
                   price={prod.Price}
                   description={prod.Description}
